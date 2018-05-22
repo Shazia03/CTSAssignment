@@ -6,7 +6,7 @@ import java.util.List;
 import com.cts.model.Employee;
 import com.cts.service.EmployeeService;
 
-public class EmployeeServiceImpl implements EmployeeService
+public class EmployeeServiceImpl implements EmployeeService , Comparable
 {
 	private List<Employee> empList;
 	public EmployeeServiceImpl()
@@ -80,6 +80,11 @@ public class EmployeeServiceImpl implements EmployeeService
 	{
 		// TODO Auto-generated method stub
 		return null;
+	}
+	@Override
+	public int compareTo(Object arg0) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

@@ -4,6 +4,7 @@ public class Department {
 
 	private int deptId;
 	private String deptName;
+	private Employee emp;
 
 	public Department(int deptId, String deptName) {
 		super();

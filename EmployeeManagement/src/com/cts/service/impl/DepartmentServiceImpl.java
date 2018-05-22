@@ -66,21 +66,20 @@ public class DepartmentServiceImpl implements DepartmentService
 	} 
 
 	@Override
-	public boolean add(int empId, int dId)
+	public boolean add(Employee e, Department d)
 	{ 
-		Department d=get(dId);
-	//	Employee e=get(empId);
-			if((d!=null)&&(e!=null))
+			if(get(d.getDeptId())!=null&&(get(e.getId())!=null))
 			{
-				
+				return false;
 			}
-		
-		return false;
+		deptList.add(d);
+		return true;
 	}
 
 	@Override
-	public boolean remove(int empId, int deptId) {
-		// TODO Auto-generated method stub
+	public boolean remove(Employee e, Department d)
+	{
+		
 		return false;
 	}
 
