@@ -12,11 +12,13 @@ public interface DepartmentService
 	 public boolean delete(int id);
 	 public Department get(int id);
 	 public List<Department> get();
-	 public boolean save(int empId,int deptId);
-	 public boolean remove(Employee empId,Department deptId);
+	 public boolean addEmployeeToDept(int empId,int deptId);
+	 public boolean removeEmployeeFromDept(int empId,int deptId);
 	 public List<Employee> getEmployees(int deptId);
-	 public List<Department> getEmployees(int deptId,int amount);
-	 public List<Department> getEmployees(int deptId,int min,int max);
+	 public List<Employee> getEmployees(int deptId,int amount);
+	 public List<Employee> getEmployees(int deptId,int min,int max);
+	 public void display(Department d);
+	 public void display();
 	
 	 
 	 

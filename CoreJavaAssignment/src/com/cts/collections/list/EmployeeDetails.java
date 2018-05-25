@@ -2,7 +2,7 @@ package com.cts.collections.list;
 
 import java.util.Comparator;
 
-public class EmployeeDetails implements Comparator<EmployeeDetails> {
+public class EmployeeDetails implements Comparator<EmployeeDetails>,Comparable<EmployeeDetails> {
 	public EmployeeDetails(int id, String name, int salary) {
 		super();
 		this.id = id;
@@ -42,6 +42,12 @@ public class EmployeeDetails implements Comparator<EmployeeDetails> {
 	@Override
 	public String toString() {
 		return "EmployeeDetails [id=" + id + ", name=" + name + ", salary=" + salary + "]";
+	}
+	@Override
+	public int compareTo(EmployeeDetails o1)
+	{
+		
+		return 0;
 	}
 
 

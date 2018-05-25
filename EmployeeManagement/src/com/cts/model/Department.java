@@ -9,7 +9,7 @@ public class Department {
 	private List<Employee> empList;
 	
 
-	public List<Employee> getEmpList() {
+	public List<Employee> getEmpListInDepartment() {
 		return empList;
 	}
 

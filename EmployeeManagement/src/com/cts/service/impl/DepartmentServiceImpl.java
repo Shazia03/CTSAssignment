@@ -78,12 +78,16 @@ public class DepartmentServiceImpl implements DepartmentService
 		
 		return deptList;
 	} 
+	@Override
 	public void display(Department d)
 	{
 		
-		System.out.println("Department Id:"+d.getDeptId());
-		System.out.println("Department Name:"+d.getDeptName());
+		System.out.println(d);
+		List<Employee> empList = d.getEmpListInDepartment();
+		empService.display(empList);
+		
 	}
+	@Override
 	public void display()
 	{
 		for(Department d:deptList)
@@ -95,7 +99,7 @@ public class DepartmentServiceImpl implements DepartmentService
 	
 	
 	@Override
-	public boolean save(int empId, int deptId)
+	public boolean addEmployeeToDept(int empId, int deptId)
 	{ //
 		Employee emp=empService.get(empId);
 		Department dept=get(deptId);
@@ -109,18 +113,27 @@ public class DepartmentServiceImpl implements DepartmentService
 			empList = new ArrayList<Employee>();
 		}
 		empList.add(emp);
-		
+		dept.setEmpList(empList);
+		//deptList.add(dept);
 		return true;
 	}
 
 	@Override
-	public boolean remove(Employee e, Department d)
+	public boolean removeEmployeeFromDept(int empId, int deptId)
 	{
-		if(get(d.getDeptId())!=null&&(get(e.getId())!=null))
+		Employee emp=empService.get(empId); 	//get the Employee with the corresponding Id
+		Department dept=get(deptId);	//get the Department with the corresponding Id
+		if(emp==null||dept==null)
 		{
-			return false;
+			return false;		//It does not exist
 		}
-		deptList.remove(d);
+		List<Employee> empList=getEmployees(deptId);
+		if(empList==null)
+		{
+			empList = new ArrayList<Employee>();
+		}
+		empList.remove(emp);		//Remove the employee of the passed empId from the empList
+		dept.setEmpList(empList);	//set the new empList which has deleted the employee passed by the user
 		return true;
 	}
 
@@ -128,29 +141,41 @@ public class DepartmentServiceImpl implements DepartmentService
 	public List<Employee> getEmployees(int deptId)
 	{
 		
-		Department dept=get(deptId);
-		return dept.getEmpList();
-	//	empList.(dept);
+		List<Employee> empList=get(deptId).getEmpListInDepartment();
+		return empList;
 		
-		
- //return null;		
-			
-			
+	
 	}
 
 	@Override
-	public List<Department> getEmployees(int deptId, int amount)
+	public List<Employee> getEmployees(int deptId, int amount)
 	{
+		List<Employee> empList=get(deptId).getEmpListInDepartment();
+		List<Employee> newList=new ArrayList<Employee>();
+		for(Employee e:empList)
+		{
+			if(e.getSalary()==amount) 
+			 newList.add(e);
+			 
+							
+		}
+		
+		return newList;
 						
-		
-		
-		return null;
 	}
 
 	@Override
-	public List<Department> getEmployees(int deptId, int min, int max) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Employee> getEmployees(int deptId, int min, int max) 
+	{
+		List<Employee> empList=get(deptId).getEmpListInDepartment();
+		List<Employee> newList=new ArrayList<Employee>();
+		for(Employee e:empList)
+		{
+			if(e.getSalary()>=min&&e.getSalary()<=max) 
+			 newList.add(e);
+			 		
+		}
+		return newList;
 	}
 	
 

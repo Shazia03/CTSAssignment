@@ -101,6 +101,7 @@ public class EmployeeServiceImpl implements EmployeeService
 		System.out.println("Emp Name  :"+e.getName());
 		System.out.println("Emp Salary  :"+e.getSalary());
 	}
+	@Override
 	public void display()
 	{
 		for(Employee e:empList)
@@ -109,18 +110,37 @@ public class EmployeeServiceImpl implements EmployeeService
 		}
 	}
 	
+	
 	public void display(List<Employee> empList)
 	{
+		if(empList==null)
+			return ;
 		for(Employee e:empList)
 		{
 			display(e);
 		}
 	}
+	
 	@Override
 	public List<Employee> getEmployees() 
 	{
 		
 		return empList;
+	}
+	@Override
+	public List<Employee> getEmployees(int empId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<Employee> getEmployees(int empId, int amount) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<Employee> getEmployees(int empId, int min, int max) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 
