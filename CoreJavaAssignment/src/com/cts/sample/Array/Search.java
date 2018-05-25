@@ -15,6 +15,7 @@ public class Search
 		
 	}
 	
+	//why return 1 or -1?
 	public int binarysearch(int a[],int x)
 	{
 		int size=a.length;
