@@ -7,7 +7,7 @@ public class MultiplicationTableTest {
 	{
 		MultiplicationTable mt=new MultiplicationTable();
 		System.out.println("The Multiplication Table");
-		mt.multiplicationtablenum(2);
+		mt.multiplicationTableNum(2);
 
 	}
 
