@@ -20,7 +20,7 @@ public class Grade
 		if (avg>=50)
 			return "B";
 		
-		//if(avg<50)
+		
 			return "Fail";
 		
 		

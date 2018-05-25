@@ -7,6 +7,6 @@ public class StringEqualTest
 	public static void main(String args[])
 	{
 		StringEqual sr=new StringEqual();
-		System.out.println(sr.stringCompare("Shazia","Shazi"));
+		System.out.println(sr.stringCompare("Shazia","Si"));
 	}
 }

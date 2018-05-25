@@ -2,11 +2,12 @@ package com.cts.service;
 
 import java.util.List;
 
+import com.cts.exceptions.DuplicateUserException;
 import com.cts.model.Employee;
 
 public interface EmployeeService 
 {
-	public boolean save(Employee emp);
+	public boolean save(Employee emp) throws DuplicateUserException;
 	
 	public boolean delete(int id);
 	
@@ -18,10 +19,7 @@ public interface EmployeeService
 
 	public List<Employee> getEmployees();
 	public void display(List<Employee> empList);
-
-	public List<Employee> getEmployees(int empId);
-	public List<Employee> getEmployees(int empId, int amount);
-	public List<Employee> getEmployees(int empId, int min, int max);
+	public List<Employee> getEmployees( int min, int max);
 
 	public void display();
 

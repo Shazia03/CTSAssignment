@@ -155,9 +155,7 @@ public class DepartmentServiceImpl implements DepartmentService
 		for(Employee e:empList)
 		{
 			if(e.getSalary()==amount) 
-			 newList.add(e);
-			 
-							
+			 newList.add(e); 				
 		}
 		
 		return newList;

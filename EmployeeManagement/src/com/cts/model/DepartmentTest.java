@@ -2,6 +2,7 @@ package com.cts.model;
 
 import java.util.List;
 
+import com.cts.exceptions.DuplicateUserException;
 import com.cts.service.DepartmentService;
 import com.cts.service.EmployeeService;
 import com.cts.service.impl.DepartmentServiceImpl;
@@ -20,18 +21,48 @@ public class DepartmentTest {
 		
 		Employee emp;
 		emp=new Employee(101,"Ramya",90_000);
-		empService.save(emp);
+		try {
+			empService.save(emp);
+		} catch (DuplicateUserException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	    emp=new Employee(102,"Ram",30_000);
-	    empService.save(emp);
+	    try {
+			empService.save(emp);
+		} catch (DuplicateUserException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		emp=new Employee(103,"Raghu",70_000);
-		empService.save(emp);
+		try {
+			empService.save(emp);
+		} catch (DuplicateUserException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		emp=new Employee(104,"Sharma",30_000);
-		empService.save(emp);
+		try {
+			empService.save(emp);
+		} catch (DuplicateUserException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		emp=new Employee(105,"Shipra",24_000);
-		empService.save(emp);
+		try {
+			empService.save(emp);
+		} catch (DuplicateUserException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		emp=new Employee(106,"Shami",45_000);
-		empService.save(emp);
+		try {
+			empService.save(emp);
+		} catch (DuplicateUserException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 		//empService = new EmployeeServiceImpl();

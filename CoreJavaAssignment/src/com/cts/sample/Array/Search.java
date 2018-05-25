@@ -9,7 +9,7 @@ public class Search
 		{
 			if(a[i]==x)
 			{
-				return i+1;
+				return i;
 			}
 		}return -1;
 		
@@ -28,7 +28,7 @@ public class Search
 		
 			if(a[middle]==x)
 			
-				return 1;
+				return middle;
 			
 			else if(x<a[middle])
 			

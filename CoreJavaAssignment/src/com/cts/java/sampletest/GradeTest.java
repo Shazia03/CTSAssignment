@@ -6,10 +6,9 @@ public class GradeTest
 
 	public static void main(String[] args)
 	{ 
-		Grade grade=new Grade();
-		System.out.println( "The garde is  "+ grade.average(70, 90, 85));
-
-
+		Grade gradeobj=new Grade();
+		String[] grade= {"","Fail","B+","B","A-","A+","A"};
+		gradeobj.average(90,80,70);
 	}
 
 }

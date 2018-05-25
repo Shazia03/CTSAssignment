@@ -1,33 +1,16 @@
 package com.cts.sample.string;
 
 public class StringEqual {
-	public  int stringCompare(String str1,String str2)
+	public  boolean stringCompare(String str1,String str2)
 	{
-		for (int i = 0; i < str1.length() && i < str2.length(); i++) {
-			if ((int)str1.charAt(i) == (int)str2.charAt(i))
-			{
-				continue;
-			} 
-			else 
-			{
-				
-				return (int)str1.charAt(i) - (int)str2.charAt(i);
-			}
+		int length1=str1.length();
+		int length2=str2.length();
+			if (length1==length2)
+				for(int i=0;i<length1;i++)
+					if(str1.charAt(i)==str2.charAt(i))
+						return true;
+		
+		return false;
+
 	}
-
-		if (str1.length() < str2.length())
-		{
-			return (int)str1.charAt(str2.length());
-		} 
-		else if (str1.length() > str2.length()) 
-		{
-			return (int)str1.charAt(str2.length());
-		}
-
-		else 
-		{
-			return 0;
-		}
-	}
-
 }
