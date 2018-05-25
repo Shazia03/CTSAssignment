@@ -13,6 +13,8 @@ public class SortingArray
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
                 }
+		
+		//NO SOP here?
 		for(int k=0;k<n;k++)
 		System.out.println(arr[k]);
     }
