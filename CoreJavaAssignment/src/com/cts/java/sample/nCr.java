@@ -1,5 +1,6 @@
 package com.cts.java.sample;
 
+//should use the same factorial function and call 3 times.
 public class nCr
 {
 	public double nCrnum(int n, int r)
