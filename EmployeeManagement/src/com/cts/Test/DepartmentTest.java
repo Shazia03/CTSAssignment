@@ -1,8 +1,10 @@
-package com.cts.model;
+package com.cts.Test;
 
 import java.util.List;
 
 import com.cts.exceptions.DuplicateUserException;
+import com.cts.model.Department;
+import com.cts.model.Employee;
 import com.cts.service.DepartmentService;
 import com.cts.service.EmployeeService;
 import com.cts.service.impl.DepartmentServiceImpl;

@@ -12,14 +12,12 @@ public class DepartmentServiceImpl implements DepartmentService
 {
 	EmployeeService empService;
 	private List<Department> deptList;
-//	private List<Department> newList;
 	Employee e;
 	Department d;
 	public DepartmentServiceImpl()
 	{
 		deptList=new ArrayList<Department>();
 		empService=new EmployeeServiceImpl();
-	//	newList=new ArrayList<Department>();
 	}
 	
 	public DepartmentServiceImpl(EmployeeService empService)
@@ -100,7 +98,7 @@ public class DepartmentServiceImpl implements DepartmentService
 	
 	@Override
 	public boolean addEmployeeToDept(int empId, int deptId)
-	{ //
+	{ 
 		Employee emp=empService.get(empId);
 		Department dept=get(deptId);
 		if(emp==null||dept==null)
@@ -174,6 +172,13 @@ public class DepartmentServiceImpl implements DepartmentService
 			 		
 		}
 		return newList;
+	}
+
+	@Override
+	public boolean addEmployeeToDept(int empId1, int empId2, int deptId) 
+	{
+		
+		return false;
 	}
 	
 

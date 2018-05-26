@@ -16,10 +16,7 @@ public class EmployeeServiceImpl implements EmployeeService
 	{
 		empList=new ArrayList<Employee>();
 	}
-	public EmployeeServiceImpl(List<Employee> empList)
-	{
-		this.empList=empList;
-	}
+	
 	@Override
 	public boolean save(Employee emp) throws DuplicateUserException
 	{

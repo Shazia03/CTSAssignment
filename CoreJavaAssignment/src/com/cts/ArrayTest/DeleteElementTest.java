@@ -1,5 +1,7 @@
 package com.cts.ArrayTest;
 
+import java.util.Arrays;
+
 import com.cts.Array.DeleteElement;
 
 public class DeleteElementTest
@@ -10,8 +12,8 @@ public class DeleteElementTest
 	int[] a= {12,13,14,16};
 	String[] names= {"Shaz","Muzu","Shan","Shaf"};
 	DeleteElement ie=new DeleteElement();
-	System.out.println(ie.deleteElementpos(a, 2, 15));
-	System.out.println(ie.deleteElement(names));
+	System.out.println(Arrays.toString(ie.Insertion(a, 2, 15)));
+	System.out.println(Arrays.toString(ie.deleteElement(names,"Muzu")));
 	}
 
 }

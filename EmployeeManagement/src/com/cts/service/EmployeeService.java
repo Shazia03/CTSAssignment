@@ -20,7 +20,7 @@ public interface EmployeeService
 	public List<Employee> getEmployees();
 	public void display(List<Employee> empList);
 	public List<Employee> getEmployees( int min, int max);
-
+	public void display(Employee e);
 	public void display();
 
 	
