@@ -88,7 +88,7 @@ public class DeptServiceHashMapImpl implements DepartmentService
 		}
 		empList.add(emp);
 		dept.setEmpList(empList);
-		deptMap.put(empId, dept);
+		deptMap.put(deptId, dept);
 		return true;
 	}
 
