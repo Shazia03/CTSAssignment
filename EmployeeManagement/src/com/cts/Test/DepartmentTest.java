@@ -8,6 +8,8 @@ import com.cts.model.Employee;
 import com.cts.service.DepartmentService;
 import com.cts.service.EmployeeService;
 import com.cts.service.impl.DepartmentServiceImpl;
+import com.cts.service.impl.DeptServiceHashMapImpl;
+import com.cts.service.impl.EmpServiceHashMapImpl;
 import com.cts.service.impl.EmployeeServiceImpl;
 
 public class DepartmentTest {
@@ -17,8 +19,8 @@ public class DepartmentTest {
 	
 	public static void init()
 	{
-		empService =new EmployeeServiceImpl(); 
-		deptService=new DepartmentServiceImpl(empService);
+		empService =new EmpServiceHashMapImpl(); 
+		deptService=new DeptServiceHashMapImpl(empService);
 		//deptService=new DepartmentServiceImpl();
 		
 		Employee emp;
@@ -74,7 +76,7 @@ public class DepartmentTest {
 		}
 			
 		//empService = new EmployeeServiceImpl();
-		
+		deptService=new DeptServiceHashMapImpl(empService);
 		Department dept;
 		dept=new Department(201,"Electronics");
 		deptService.save(dept);
@@ -96,19 +98,26 @@ public class DepartmentTest {
 		deptService.addEmployeeToDept(105, 202);
 		deptService.addEmployeeToDept(106, 203);
 		
-		//deptService.display();
+		System.out.println("All Departments with Employees");
+		deptService.display();
 		
-		//deptService.removeEmployeeFromDept(103, 203);
-		//deptService.display();
+		System.out.println("Removing employee 103 from department 203");
+		deptService.removeEmployeeFromDept(103, 203);
+		System.out.println(deptService.getEmployees(203));
+	
 		
-		//deptService.getEmployeesInTheDepartment(201);
-		//deptService.display();
+		System.out.println("get info of 203 department");
+		Department dept=deptService.get(203);
+		deptService.display(dept);
+	
+		System.out.println("Get Employees of 201 department");
+		System.out.println(deptService.getEmployees(201));
 		
-		//System.out.println(deptService.getEmployees(201));
+		System.out.println("List of employees with salary 90000");
+		List<Employee> employees=deptService.getEmployees(201, 90000);
+		empService.display(employees);
 		
-		//List<Employee> employees=deptService.getEmployees(201, 90000);
-		//empService.display(employees);
-		
+		System.out.println("List of employees with salary range 30000 and 80000");
 		List<Employee> empsorted=deptService.getEmployees(201, 30000, 80000);
 		empService.display(empsorted);
 		

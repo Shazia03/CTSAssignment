@@ -18,18 +18,18 @@ public class DeleteElement
 	   return arr;
    }
 	//what you are deleting?
-    public String[] deleteElement(String arr[],String del)
+    public String deleteElement(String str,int del)
     {
-    	for(int i=0; i<arr.length; i++)
+       	char[] character=str.toCharArray();
+    	for(int i=0; i<character.length-1; i++)
         {
-            if(arr[i] == del)
-            {
-                for(int j=i; j<arr.length-1; j++)
-                {
-                    arr[j] = arr[j+1];
-                }
-            }
+            
+                    character[i] = character[i+1];
+              
         }
-		return arr;
+    	character[character.length-1]='\0';
+    	
+    	String chara=new String(character);
+		return chara;
     }
 }

@@ -13,7 +13,6 @@ public interface DepartmentService
 	 public Department get(int id);
 	 public List<Department> get();
 	 public boolean addEmployeeToDept(int empId,int deptId);
-	 public boolean addEmployeeToDept(int empId1,int empId2,int deptId); 
 	 public boolean removeEmployeeFromDept(int empId,int deptId);
 	 public List<Employee> getEmployees(int deptId);
 	 public List<Employee> getEmployees(int deptId,int amount);

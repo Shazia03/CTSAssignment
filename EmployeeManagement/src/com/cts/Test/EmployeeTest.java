@@ -38,14 +38,14 @@ public class EmployeeTest {
 		//System.out.println(imp.get(103));
 		
 		//empServiceimpl.display(emp);
-		//empServiceimpl.display();
+		empServiceimpl.display();
 		
 		/*emp=new Employee(101,"Reshma",97600);
 		System.out.println(empServiceimpl.update(emp));
 		empServiceimpl.display();*/
 
-		List<Employee> empsorted=empServiceimpl.getEmployees(1000, 30000);
-		empServiceimpl.display(empsorted);
+		/*List<Employee> empsorted=empServiceimpl.getEmployees(1000, 30000);
+		empServiceimpl.display(empsorted);*/
 		
 	}
 

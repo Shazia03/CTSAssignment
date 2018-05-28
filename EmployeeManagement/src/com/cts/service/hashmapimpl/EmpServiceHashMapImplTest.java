@@ -1,14 +1,16 @@
 package com.cts.service.hashmapimpl;
 
+import java.util.List;
+
 import com.cts.exceptions.DuplicateUserException;
 import com.cts.model.Employee;
-import com.cts.service.impl.EmployeeServiceHashMapImpl;
+import com.cts.service.impl.EmpServiceHashMapImpl;
 
 public class EmpServiceHashMapImplTest
 {
 	public static void main(String[] args) 
 	{
-		EmployeeServiceHashMapImpl empServiceHash=new EmployeeServiceHashMapImpl();
+		EmpServiceHashMapImpl empServiceHash=new EmpServiceHashMapImpl();
 		Employee emp;
 		emp=new Employee(303,"Sharan",60_000);
 		try {
@@ -32,7 +34,27 @@ public class EmpServiceHashMapImplTest
 			e.printStackTrace();
 		}
 		
+		System.out.println("Saving Employee");
 		empServiceHash.display();
+		
+		empServiceHash.delete(304);
+		System.out.println("Deletion");
+		empServiceHash.display();
+		
+		System.out.println(empServiceHash.get(303));
+		
+		empServiceHash.get();
+		System.out.println("All the employees details");
+		empServiceHash.display();
+		
+		emp=new Employee(305,"Reshma",97600);
+		System.out.println(empServiceHash.update(emp));
+		System.out.println("Updated employee");
+		empServiceHash.display();
+		
+		List<Employee> empList=empServiceHash.getEmployees();
+		System.out.println("List of Employees");
+		empServiceHash.display(empList);
 		
 	}
 }

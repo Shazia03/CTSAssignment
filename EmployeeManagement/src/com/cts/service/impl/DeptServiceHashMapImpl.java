@@ -1,105 +1,81 @@
 package com.cts.service.impl;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.cts.model.Department;
 import com.cts.model.Employee;
 import com.cts.service.DepartmentService;
 import com.cts.service.EmployeeService;
 
-public class DepartmentServiceImpl implements DepartmentService
+public class DeptServiceHashMapImpl implements DepartmentService
 {
-	EmployeeService empService;
-	private List<Department> deptList;
-
-	public DepartmentServiceImpl()
+	Employee e;
+	EmployeeService empServiceHash;
+	private Map<Integer , Department> deptMap;
+	/*public DeptServiceHashMapImpl()
 	{
-		deptList=new ArrayList<Department>();
-		empService=new EmployeeServiceImpl();
-	}
+		deptMap=new HashMap<Integer , Department>();
+		empServiceHash=new EmpServiceHashMapImpl();
+	}*/
 	
-	public DepartmentServiceImpl(EmployeeService empService)
+	public DeptServiceHashMapImpl(EmployeeService empServiceHash)
 	{
-		deptList=new ArrayList<Department>();
-		this.empService=empService;
-	//	newList=new ArrayList<Department>();
+		deptMap=new HashMap<Integer , Department>();
+		this.empServiceHash=empServiceHash;
 	}
+
 
 	@Override
-	public boolean save(Department d) {
-		if(get(d.getDeptId())!=null)
-		{
-			return false;
-		}
-		deptList.add(d);
+	public boolean save(Department d)
+	{
+		if(!deptMap.containsKey(d))
+		deptMap.put(d.getDeptId(),d);
 		return true;
-		
+	
 	}
 
 	@Override
 	public boolean update(Department d)
 	{
-		if(get(d.getDeptId())==null) //Checking if it exists
-		{
+		if(!deptMap.containsKey(d))
 			return false;
-		}
-		Department temp=get(d.getDeptId()); //Assign what has to get updated
-			deptList.remove(temp);  //Remove the object which is existing
-			deptList.add(d);  // Add which has to be passed
-	return true;
+			deptMap.remove(deptMap.containsKey(d));
+			deptMap.put(d.getDeptId(),d);
+			
+			return true;
 	}
 
 	@Override
 	public boolean delete(int id) {
-		Department d =get(id);
-		if(d!=null)
+		if(deptMap.containsKey(id))
 		{
-			deptList.remove(d);
+			deptMap.remove(id);
 			return true;
 		}
-		return false;
+	return false;
 	}
 
 	@Override
-	public Department get(int id) {
-		for(Department d:deptList)
-		{
-			if(d.getDeptId()==id)
-				return d;
-		}
-		return null;
+	public Department get(int id) 
+	{
+		return deptMap.get(id);
 	}
 
 	@Override
-	public List<Department> get() {
-		
-		return deptList;
-	} 
+	public List<Department> get() 
+	{
+		return new ArrayList<Department>((Collection<? extends Department>) deptMap.values());
+	}
+
 	@Override
-	public void display(Department d)
+	public boolean addEmployeeToDept(int empId, int deptId) 
 	{
 		
-		System.out.println(d);
-		List<Employee> empList = d.getEmpListInDepartment();
-		empService.display(empList);
-		
-	}
-	@Override
-	public void display()
-	{
-		for(Department d:deptList)
-		{
-			display(d);
-		}
-	}
-	
-	
-	
-	@Override
-	public boolean addEmployeeToDept(int empId, int deptId)
-	{ 
-		Employee emp=empService.get(empId);
+		Employee emp=empServiceHash.get(empId);
 		Department dept=get(deptId);
 		if(emp==null||dept==null)
 		{
@@ -112,14 +88,15 @@ public class DepartmentServiceImpl implements DepartmentService
 		}
 		empList.add(emp);
 		dept.setEmpList(empList);
-		//deptList.add(dept);
+		deptMap.put(empId, dept);
 		return true;
 	}
 
 	@Override
 	public boolean removeEmployeeFromDept(int empId, int deptId)
 	{
-		Employee emp=empService.get(empId); 	//get the Employee with the corresponding Id
+		
+		Employee emp=empServiceHash.get(empId); 	//get the Employee with the corresponding Id
 		Department dept=get(deptId);	//get the Department with the corresponding Id
 		if(emp==null||dept==null)
 		{
@@ -138,16 +115,12 @@ public class DepartmentServiceImpl implements DepartmentService
 	@Override
 	public List<Employee> getEmployees(int deptId)
 	{
-		
 		List<Employee> empList=get(deptId).getEmpListInDepartment();
 		return empList;
-		
-	
 	}
 
 	@Override
-	public List<Employee> getEmployees(int deptId, int amount)
-	{
+	public List<Employee> getEmployees(int deptId, int amount) {
 		List<Employee> empList=get(deptId).getEmpListInDepartment();
 		List<Employee> newList=new ArrayList<Employee>();
 		for(Employee e:empList)
@@ -157,12 +130,10 @@ public class DepartmentServiceImpl implements DepartmentService
 		}
 		
 		return newList;
-						
 	}
 
 	@Override
-	public List<Employee> getEmployees(int deptId, int min, int max) 
-	{
+	public List<Employee> getEmployees(int deptId, int min, int max) {
 		List<Employee> empList=get(deptId).getEmpListInDepartment();
 		List<Employee> newList=new ArrayList<Employee>();
 		for(Employee e:empList)
@@ -172,6 +143,21 @@ public class DepartmentServiceImpl implements DepartmentService
 			 		
 		}
 		return newList;
+		
 	}
+
+	@Override
+	public void display(Department d) {
+		System.out.println(d);
+		
+	}
+
+	@Override
+	public void display() {
+	
+		System.out.println(deptMap);
+		
+	}
+	
 
 }

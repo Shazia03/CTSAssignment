@@ -90,12 +90,13 @@ public class EmployeeServiceImpl implements EmployeeService
 	
 	public void display(List<Employee> empList)
 	{
-		if(empList==null)
-			return ;
-		for(Employee e:empList)
-		{
-			display(e);
-		}
+//		if(empList==null)                 
+//			return ;
+//		for(Employee e:empList)
+//		{
+//			display(e);
+//		}
+		System.out.println(empList);
 	}
 	
 	@Override

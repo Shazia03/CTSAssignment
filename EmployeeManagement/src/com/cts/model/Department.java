@@ -1,6 +1,7 @@
 package com.cts.model;
 
 import java.util.List;
+import java.util.Map;
 
 public class Department {
 
@@ -8,6 +9,7 @@ public class Department {
 	private String deptName;
 	private List<Employee> empList;
 	
+
 
 	public List<Employee> getEmpListInDepartment() {
 		return empList;
@@ -41,7 +43,7 @@ public class Department {
 
 	@Override
 	public String toString() {
-		return "Department [deptId=" + deptId + ", deptName=" + deptName + ", empList=" + empList + "]";
+		return "Department [deptId=" + deptId + ", deptName=" + deptName + ", empList=" + empList + " ]";
 	}
 
 	
