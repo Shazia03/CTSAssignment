@@ -1,6 +1,7 @@
 package com.cts.service.impl;
 import com.cts.exceptions.DuplicateUserException;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +12,7 @@ import com.cts.service.EmployeeService;
 public class EmployeeServiceImpl implements EmployeeService 
 {
 
+	private Connection con;
 	private List<Employee> empList;
 	public EmployeeServiceImpl()
 	{
