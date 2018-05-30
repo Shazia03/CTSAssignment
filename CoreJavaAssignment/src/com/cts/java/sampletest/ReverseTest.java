@@ -6,6 +6,7 @@ public class ReverseTest {
 	{
 		Reverse rs=new Reverse();
 		System.out.println("Reverse number is "+rs.reversenum(3674));
+		
 	}
 
 }
