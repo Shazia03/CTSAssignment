@@ -1,0 +1,50 @@
+DML(CONTINUED):
+//Fetch all the employees who are belongs to particular department name:(join deptname to table employee)
+select e.*,d.deptname from department d, employee e where e.deptid=d.deptid;
+
+//Fetch all the employees who‘s salary between from amount1 and amount2.
+select * from employee where salary between 15000 and 35000
+
+//Fetch all the employees from given 3 departments
+SELECT *  FROM EMPLOYEE  WHERE 
+DEPTID IN
+(SELECT DEPTID FROM DEPARTMENT WHERE DEPTNAME = 'DEVELOPMENT' OR DEPTNAME='TESTING' OR  DEPTNAME = 'MARKETING')
+
+//Fetch all the employees who salary more than a particular employee( name= ram)
+SELECT * FROM EMPLOYEE WHERE SALARY<(SELECT SALARY FROM EMPLOYEE WHERE NAME='SHAZIA')
+
+//Fetch all the employees who are senior to a particular employee( name= ram)
+SELECT * FROM EMPLOYEE WHERE HIREDATE<(SELECT HIREDATE FROM EMPLOYEE WHERE NAME='SHAZIA')
+
+//Fetch all the employees who’s job is same as a particular employee( name= ram)
+SELECT * FROM EMPLOYEE WHERE JOB=(SELECT JOB FROM EMPLOYEE WHERE NAME='SHANKAR')
+
+//Fetch the highest paid employees in each department
+SELECT DEPTID, MAX(SALARY) FROM EMPLOYEE GROUP BY DEPT ID
+
+//Fetch the highest paid employees in each department WITHOUT DEPT 101
+SELECT DEPTID, MAX(SALARY) FROM EMPLOYEE
+GROUP BY DEPTID HAVING DEPTID!=101
+
+//Find the number employees working in each department.
+SELECT DEPTID,COUNT(ID) FROM EMPLOYEE
+GROUP BY DEPTID
+
+//Find the number employees working in particular department
+SELECT DEPTID,COUNT(ID) FROM EMPLOYEE
+GROUP BY DEPTID HAVING DEPTID=101
+-------------------------------------------
+TCL:
+SELECT * FROM EMPLOYEE
+SELECT * FROM DEPARTMENT 
+UPDATE EMPLOYEE SET NAME='SHRAVAN' WHERE ID= 4;
+UPDATE EMPLOYEE SET SALARY=14000 WHERE ID= 4;
+SAVEPOINT A;
+UPDATE EMPLOYEE SET NAME='ALISA' WHERE ID= 5;
+UPDATE EMPLOYEE SET SALARY=35000 WHERE ID= 5;
+ROLLBACK
+
+
+
+
+
