@@ -68,7 +68,17 @@ function isPrime(n){
             return false;
     }
     return true;
-}isPrime(4)
+}//isPrime(4)
+
+function PrimeRange(a,b)
+{
+	var a,b,i;
+	for(i=a;i<b;i++)
+		{
+		if(isPrime(i))
+			console.log(i);
+		}
+}PrimeRange(2,10)
 	
 
 

@@ -13,26 +13,13 @@ public class EmpServiceHashMapImplTest
 		EmpServiceHashMapImpl empServiceHash=new EmpServiceHashMapImpl();
 		Employee emp;
 		emp=new Employee(303,"Sharan",60_000);
-		try {
 			empServiceHash.save(emp);
-		} catch (DuplicateUserException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
 		emp=new Employee(304,"Sanjay",50_000);
-		try {
 			empServiceHash.save(emp);
-		} catch (DuplicateUserException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
 		emp=new Employee(305,"Soumiya",80_000);
-		try {
 			empServiceHash.save(emp);
-		} catch (DuplicateUserException e)
-		{
-			e.printStackTrace();
-		}
 		
 		System.out.println("Saving Employee");
 		empServiceHash.display();

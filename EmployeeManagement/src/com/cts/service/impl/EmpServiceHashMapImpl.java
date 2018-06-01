@@ -23,7 +23,7 @@ public class EmpServiceHashMapImpl implements EmployeeService
 	}
 	Employee emp;
 	@Override
-	public boolean save(Employee emp) throws DuplicateUserException
+	public boolean save(Employee emp)
 	{
 		if(!empMap.containsKey(emp.getId()))
 		empMap.put(emp.getId(), emp);

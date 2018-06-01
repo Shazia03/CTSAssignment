@@ -21,55 +21,26 @@ public class DeptServiceHashMapImplTest
 		empServiceHash=new EmpServiceHashMapImpl();
 		deptServiceHash=new DeptServiceHashMapImpl(empServiceHash);
 		emp=new Employee(101,"Ramya",90_000);
-		try {
-			empServiceHash.save(emp);
-		} catch (DuplicateUserException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		empServiceHash.save(emp);
+		
 	    emp=new Employee(102,"Ram",30_000);
-	    try {
-			empServiceHash.save(emp);
-		} catch (DuplicateUserException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	    empServiceHash.save(emp);
+	    
 		emp=new Employee(103,"Raghu",70_000);
-		try {
-			empServiceHash.save(emp);
-		} catch (DuplicateUserException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		empServiceHash.save(emp);
 		
 		emp=new Employee(104,"Sharma",30_000);
-		try {
-			empServiceHash.save(emp);
-		} catch (DuplicateUserException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		empServiceHash.save(emp);
+	
 		emp=new Employee(105,"Shipra",24_000);
-		try {
-			empServiceHash.save(emp);
-		} catch (DuplicateUserException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		empServiceHash.save(emp);
+		
 		emp=new Employee(106,"Shami",45_000);
-		try {
-			empServiceHash.save(emp);
-		} catch (DuplicateUserException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		empServiceHash.save(emp);
+		
 		emp=new Employee(107,"Shiny",20_000);
-		try {
-			empServiceHash.save(emp);
-		} catch (DuplicateUserException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		empServiceHash.save(emp);
+
 		
 		Department dept;
 		dept=new Department(201,"Electronics");

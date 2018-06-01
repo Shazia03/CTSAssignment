@@ -7,7 +7,7 @@ import com.cts.model.Employee;
 
 public interface EmployeeService 
 {
-	public boolean save(Employee emp) throws DuplicateUserException;
+	public boolean save(Employee emp);
 	//save Employee
 	public boolean delete(int id);
 	//Delete

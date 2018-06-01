@@ -20,7 +20,7 @@ public class EmployeeServiceImpl implements EmployeeService
 	}
 	
 	@Override
-	public boolean save(Employee emp) throws DuplicateUserException
+	public boolean save(Employee emp) 
 	{
 		try {
 			if(get(emp.getId())!= null)
