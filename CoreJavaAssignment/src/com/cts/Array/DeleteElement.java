@@ -18,7 +18,7 @@ public class DeleteElement
 	   return arr;
    }
 	//what you are deleting?
-    public String deleteElement(String str,int del)
+    public String deleteElement(String str)
     {
        	char[] character=str.toCharArray();
     	for(int i=0; i<character.length-1; i++)
