@@ -4,18 +4,18 @@ public class Employee
 {
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", DeptId=" + DeptId + "]";
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", deptId=" + deptId + "]";
 	}
 
 	private int id;
 	private String name;
 	private int salary;
-	private int DeptId;
+	private int deptId;
 	public int getDeptId() {
-		return DeptId;
+		return deptId;
 	}
 	public void setDeptId(int deptId) {
-		DeptId = deptId;
+		deptId = deptId;
 	}
 	public int getId() {
 		return id;
@@ -36,11 +36,19 @@ public class Employee
 		this.salary = salary;
 	}
 	
+	
 	public Employee(int id, String name, int salary) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.salary = salary;
+	}
+	public Employee(int id, String name, int salary, int deptId) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+		this.deptId = deptId;
 	}
 	public Employee() {
 		// TODO Auto-generated constructor stub

@@ -3,6 +3,7 @@
 	<name>EmployeeManagementFrontEnd</name>
 	<comment></comment>
 	<projects>
+		<project>EmployeeManagement</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -2,7 +2,7 @@ package com.cts.Array;
 
 public class SortingArray 
 {
-	public void bubbleSort(int arr[])
+	public int[] bubbleSort(int arr[])
 	{
 		int n=arr.length;
 		for (int i = 0; i < n-1; i++)
@@ -13,13 +13,7 @@ public class SortingArray
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
                 }
-		
-		//NO SOP here?
-		for(int k=0;k<n;k++)
-		System.out.println(arr[k]);
-    }
-	
-	
-	
-		
+		return arr;
 	}
+	
+}

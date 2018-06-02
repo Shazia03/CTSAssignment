@@ -19,10 +19,10 @@ public class IntegerArray
 		System.out.println(list.searchArrayListValue(integerlist,100));
 		System.out.println(list.searchArrayListPosition(integerlist,2));
 		//System.out.println("Before sort:");
-		list.displayUsingForLoop(integerlist);
+		//list.displayUsingForLoop(integerlist);
 		//list.displayUsingEnhancedForLoop(integerlist);
 		//list.displayUsingIterator(integerlist);
-		//System.out.println(integerlist.get(1));
+		System.out.println(integerlist.get(1));
 		
 		//Collections.sort(integerlist);
 		//System.out.println("After sort:");

@@ -23,8 +23,7 @@ public class DeleteElement
        	char[] character=str.toCharArray();
     	for(int i=0; i<character.length-1; i++)
         {
-            
-                    character[i] = character[i+1];
+            character[i] = character[i+1];
               
         }
     	character[character.length-1]='\0';

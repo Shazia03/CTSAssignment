@@ -1,4 +1,6 @@
 package com.cts.ArrayTest;
+import java.util.Arrays;
+
 import com.cts.Array.SortingArray;
 public class SortingArrayTest
 {
@@ -6,7 +8,7 @@ public class SortingArrayTest
 	{
 		int[] num= {33,67,89,21,34,55,11};
 		SortingArray sa=new SortingArray();
-		sa.bubbleSort(num);
+		System.out.println(Arrays.toString(sa.bubbleSort(num)));
 	}
 
 }
